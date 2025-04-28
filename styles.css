@@ -54,7 +54,7 @@ nav ul li a:hover {
 /* メインビジュアル */
 .hero {
   height: 100vh;
-  background: url('../choux-cream.jpg') no-repeat center/cover;
+  background: url('choux-cream.jpg') no-repeat center/cover;
   position: relative;
   display: flex;
   justify-content: center;
