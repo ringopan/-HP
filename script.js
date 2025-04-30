@@ -32,7 +32,6 @@ window.addEventListener('load', checkFadeIn);
 
 // Homeセクションのキラキラパーティクル
 const homeSparkleContainer = document.querySelector('#home .sparkle-container');
-let homeSparkleInterval = null;
 function createHomeSparkle() {
     const sparkle = document.createElement('div');
     sparkle.classList.add('sparkle');
@@ -48,12 +47,7 @@ function createHomeSparkle() {
     });
 }
 
-// 5秒間だけパーティクルを生成
-homeSparkleInterval = setInterval(createHomeSparkle, 300);
-setTimeout(() => {
-    clearInterval(homeSparkleInterval);
-    homeSparkleInterval = null;
-}, 5000); // 5秒後に停止
+setInterval(createHomeSparkle, 300);
 
 // Sweetsセクションのキラキラパーティクル
 const sweetsSparkleContainer = document.querySelector('#sweets .sparkle-container');
@@ -66,7 +60,7 @@ function createSweetsSparkle() {
     sparkle.style.left = `${Math.random() * maxX}px`;
     sparkle.style.top = `${Math.random() * maxY}px`;
     sparkle.style.animationDelay = `${Math.random() * 1}s`;
-    sparkle.style.animationDuration = `${大小 0.8 + Math.random() * 1}s`;
+    sparkle.style.animationDuration = `${0.8 + Math.random() * 1}s`;
     sweetsSparkleContainer.appendChild(sparkle);
     sparkle.addEventListener('animationend', () => {
         sparkle.remove();
@@ -75,6 +69,6 @@ function createSweetsSparkle() {
 
 function startSweetsSparkles() {
     if (!sweetsSparkleInterval) {
-        sweetsSparkleInterval = setInterval(createSweetsSparkle, 200);
+        sweetsSparkleInterval = setInterval(createSweetsSparkle, 200); // より頻繁に
     }
 }
