@@ -60,6 +60,7 @@ nav ul li a:hover {
   justify-content: center;
   align-items: center;
   text-align: center;
+  animation: zoomIn 10s ease-in-out infinite; /* 背景にズームインアニメーション */
 }
 
 
