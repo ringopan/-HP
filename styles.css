@@ -78,6 +78,9 @@ nav ul li a:hover {
 .hero-text {
   position: relative;
   color: #FFF5E1;
+  opacity: 0; /* 初期状態で非表示 */
+  transform: translateY(50px); /* 初期位置を下に */
+  animation: slideIn 1s ease-out forwards; /* フェードイン＋スライドイン */
 }
 
 .hero-text h1 {
@@ -88,6 +91,30 @@ nav ul li a:hover {
 
 .hero-text p {
   font-size: 1.5em;
+}
+
+/* キーフレーム定義 */
+@keyframes zoomIn {
+  0% {
+    background-size: 100%;
+  }
+  50% {
+    background-size: 120%;
+  }
+  100% {
+    background-size: 100%;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* セクション */
